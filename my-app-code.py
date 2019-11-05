@@ -2,9 +2,8 @@
 import kfp
 from kfp import components
 from kfp import dsl
-from kfp import gcp
-
 from kfp.compiler import Compiler
+
 import lady_gaga
 
 

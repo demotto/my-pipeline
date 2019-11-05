@@ -7,7 +7,7 @@ outputs:
 - {name: output1, description='Output 1 data'}
 implementation:
   container:
-    image: demotto/my-comp
+    image: demotto/my-image100:latest
     command: [
       python3, /pipelines/component/src/app.py,
       --input1,  {inputValue:  input1},
