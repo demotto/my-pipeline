@@ -3,9 +3,14 @@ from kfp import dsl
 from kfp.compiler import Compiler
 
 
-sb_op = kfp.components.load_component_from_url("https://raw.githubusercontent.com/demotto/my-pipeline/master/expr001/component.yaml")
+#sb_op = kfp.components.load_component_from_url("https://raw.githubusercontent.com/demotto/my-pipeline/master/expr001/component.yaml")
 
-print(sb_op)
+import requests
+url = "https://raw.githubusercontent.com/demotto/my-pipeline/master/expr001/component.yaml"
+resp = requests.get(url)
+
+sb_op = kfp.components.load_component_from_text(resp.text)
+
 
 @dsl.pipeline(
     name='simple pipeline',

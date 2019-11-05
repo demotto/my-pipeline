@@ -4,7 +4,7 @@ inputs:
 - {name: input1, type: String}
 - {name: input2, type: String} # The default values must be specified as YAML strings.
 outputs:
-- {name: output1, type: String, default: '/tmp'}
+- {name: output1}
 implementation:
   container:
     image: demotto/my-image100:latest
