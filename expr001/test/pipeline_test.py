@@ -2,7 +2,8 @@ import kfp
 from kfp import dsl
 from kfp.compiler import Compiler
 
-sb_op = kfp.components.load_component_from_url("http://git.51caocao.cn/Yifan.Hu/my-pipeline/raw/master/expr001/component.yaml")
+
+sb_op = kfp.components.load_component_from_url("https://raw.githubusercontent.com/demotto/my-pipeline/master/expr001/component.yaml")
 
 
 @dsl.pipeline(
