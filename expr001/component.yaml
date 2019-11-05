@@ -1,10 +1,10 @@
 name: Carry your bricks
 description: Performs some dummy work.
 inputs:
-- {name: input1, type: String, description: 'my input 1'}
-- {name: input2, type: String, default: 'yyy', description: 'my input 2'} # The default values must be specified as YAML strings.
+- {name: input1, type: String}
+- {name: input2, type: String} # The default values must be specified as YAML strings.
 outputs:
-- {name: output1, description: 'Output 1 data'}
+- {name: output1}
 implementation:
   container:
     image: demotto/my-image100:latest
