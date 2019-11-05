@@ -1,0 +1,16 @@
+name: Carry your bricks
+description: Performs some dummy work.
+inputs:
+- {name: input1, type: String, description='my input 1'}
+- {name: input2, type: String, default='yyy', description='my input 2'} # The default values must be specified as YAML strings.
+outputs:
+- {name: output1, description='Output 1 data'}
+implementation:
+  container:
+    image: demotto/my-comp
+    command: [
+      python3, /pipelines/component/src/app.py,
+      --input1,  {inputValue:  input1},
+      --input2,       {inputValue: input2},
+      --output1, {outputPath: output1},
+    ]

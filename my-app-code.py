@@ -5,14 +5,15 @@ from kfp import dsl
 from kfp import gcp
 
 from kfp.compiler import Compiler
+import lady_gaga
 
 
 def my_func():
-    print("call my_func")
+    lady_gaga.my_func_impl()
 
 
 def next_func(a):
-    print("next_func: " + str(a))
+    lady_gaga.next_func_impl()
 
 
 my_op = components.func_to_container_op(my_func)
@@ -31,6 +32,6 @@ def my_pipeline():
 
 if __name__ == '__main__':
     compiler = Compiler()
-    compiler.compile(my_pipeline, "hallo.tar.gz")
+    compiler.compile(my_pipeline, "hallo.zip")
     # client = kfp.Client()
-    # kfp.Client().create_run_from_pipeline_func(my_pipeline, arguments=None)
+    kfp.Client().create_run_from_pipeline_func(my_pipeline, arguments=None)
